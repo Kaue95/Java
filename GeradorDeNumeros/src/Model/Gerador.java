@@ -24,6 +24,6 @@ public class Gerador {
             vet[i] = gera.nextInt(80+1);
     
  }
-}
-   
+    }
+
 

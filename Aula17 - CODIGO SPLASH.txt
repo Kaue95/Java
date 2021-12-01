@@ -1,0 +1,46 @@
+        new Thread(){
+        
+            public void run() {
+        
+        
+        for (int i=0; i<101; i++){
+                    try {
+                        sleep(60); 
+                        
+                        progresso.setValue(i);
+                        
+                        if(progresso.getValue() == 10){
+                        
+                            Mensagem.setText("Fazendo a conexao com o banco de dados");
+                            sleep(2000);
+                           
+                                                       
+                        
+                        }else if (progresso.getValue() <=30){
+                            Mensagem.setText("Carregando o sistema");
+                          sleep(100);  
+                        } else if (progresso.getValue() <=99){
+                            Mensagem.setText("Carregamento quase completo");
+                            
+                        }else{
+                            Mensagem.setText("Carregamento completo. Seu programa sera iniciado.");
+                        
+                        sleep(3000);
+                        
+                        new Login().setVisible(true);
+                        }
+                        
+                        
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(Splash.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+        
+        
+        
+        
+        }        
+        }
+        
+        }.start();
+        
+    }
